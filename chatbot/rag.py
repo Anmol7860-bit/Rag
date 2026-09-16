@@ -17,8 +17,9 @@ print("2. Gemini 3.7 Flash")
 print("3. GPT-4o Mini")
 print("4. GPT-5 Mini")
 print("5. GPT-5.1")
-print("6. Automatic Router")
-print("7. All Models with Evals")
+print("6. NVIDIA Nemotron")
+print("7. Automatic Router")
+print("8. All Models with Evals")
 
 choice = input("\nSelect model: ")
 
@@ -28,8 +29,9 @@ model_map = {
     "3": "gpt-4o-mini",
     "4": "gpt-5-mini",
     "5": "gpt-5.1",
-    "6": None,
-    "7": "benchmark"
+    "6": "nvidia-nemotron",
+    "7": None,
+    "8": "benchmark"
 }
 
 selected_model = model_map.get(choice)
@@ -137,7 +139,8 @@ def run_all_models(question, context, history):
         "gemini-3.7-flash",
         "gpt-4o-mini",
         "gpt-5-mini",
-        "gpt-5.1"
+        "gpt-5.1",
+        "nvidia-nemotron"
     ]
 
     results = []
@@ -367,3 +370,7 @@ Answer:
         # =========================
 
         print("\nAI:", answer)
+
+
+
+

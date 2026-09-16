@@ -2,19 +2,14 @@ from llm.router import ModelRouter
 from llm.request import ModelRequest
 
 
-router = ModelRouter(
-    primary="gemini",
-    fallback="openai"
-)
-
+router = ModelRouter()
 
 request = ModelRequest(
-    prompt="Explain RAG in one sentence.",
-    task="reasoning",
-    priority="balanced"
+    prompt="Explain RAG in two sentences.",
+    model="nvidia-nemotron"
 )
-
 
 response = router.generate(request)
 
-print("\nAI:", response)
+print("\n===== ROUTER RESPONSE =====")
+print(response)

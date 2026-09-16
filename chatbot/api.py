@@ -59,3 +59,5 @@ def chat(request: ChatRequest):
         "conversation_id": request.conversation_id,
         "response": response.text
     }
+
+

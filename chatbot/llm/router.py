@@ -1,6 +1,7 @@
 from .gemini import GeminiProvider
 from .openai import OpenAIProvider
-
+from .openrouter import OpenRouterProvider
+from .request import ModelRequest
 
 class ModelRouter:
 
@@ -28,6 +29,9 @@ class ModelRouter:
 
             "gpt-5.1":
                 OpenAIProvider("gpt-5.1"),
+
+            "nvidia-nemotron":
+                OpenRouterProvider("nvidia/nemotron-3.5-lightning:free"),
         }
 
 
@@ -37,7 +41,7 @@ class ModelRouter:
 
         self.primary_model = "gemini-3.7-flash"
 
-        self.fallback_model = "gemini-2.5-flash"
+        self.fallback_model = "nvidia-nemotron"
 
 
     # =====================================
